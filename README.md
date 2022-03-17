@@ -1,6 +1,3 @@
-# terraform-aws-cloudwatch-agent [![Build Status](https://travis-ci.org/cloudposse/terraform-aws-cloudwatch-agent.svg?branch=master)](https://travis-ci.org/cloudposse/terraform-aws-cloudwatch-agent) [![Latest Release](https://img.shields.io/github/release/cloudposse/terraform-aws-cloudwatch-agent.svg)](https://github.com/cloudposse/terraform-aws-cloudwatch-agent/releases/latest) [![Slack Community](https://slack.cloudposse.com/badge.svg)](https://slack.cloudposse.com)
-
-
 Terraform module to install the CloudWatch agent on EC2 instances using `cloud-init`.
 
 
