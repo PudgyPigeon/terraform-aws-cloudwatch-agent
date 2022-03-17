@@ -7,7 +7,7 @@ module "label" {
 }
 
 data "template_file" "cloud_init_cloudwatch_agent" {
-  template = "${file("${path.module}/templates/cloud_init.yaml")}"
+  template = file("${path.module}/templates/cloud_init.yaml")
 
   vars = {
     cloudwatch_agent_configuration = "${var.metrics_config == "standard" ? base64encode(data.template_file.cloudwatch_agent_configuration_standard.rendered) : base64encode(data.template_file.cloudwatch_agent_configuration_advanced.rendered)}"
@@ -15,7 +15,7 @@ data "template_file" "cloud_init_cloudwatch_agent" {
 }
 
 data "template_file" "cloudwatch_agent_configuration_advanced" {
-  template = "${file("${path.module}/templates/cloudwatch_agent_configuration_advanced.json")}"
+  template = file("${path.module}/templates/cloudwatch_agent_configuration_advanced.json")
 
   vars = {
     aggregation_dimensions      = "${jsonencode(var.aggregation_dimensions)}"
@@ -26,7 +26,7 @@ data "template_file" "cloudwatch_agent_configuration_advanced" {
 }
 
 data "template_file" "cloudwatch_agent_configuration_standard" {
-  template = "${file("${path.module}/templates/cloudwatch_agent_configuration_standard.json")}"
+  template = file("${path.module}/templates/cloudwatch_agent_configuration_standard.json")
 
   vars  = {
     aggregation_dimensions      = "${jsonencode(var.aggregation_dimensions)}"
