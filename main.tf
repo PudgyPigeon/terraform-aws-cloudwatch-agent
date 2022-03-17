@@ -1,5 +1,5 @@
 module "label" {
-  source     = "git::https://github.com/cloudposse/terraform-null-label.git?ref=tags/0.7.0"
+  source     = "git::https://github.com/cloudposse/terraform-null-label.git?ref=v0.25.0"
   stage      = "${var.stage}"
   name       = "${var.name}"
   namespace  = "${var.namespace}"
